@@ -1,0 +1,19 @@
+[package]
+name = "{{project-name}}"
+version = "0.1.0"
+authors = ["{{authors}}"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+{%- if use_clap %}
+clap = { version = "^4.4", features = ["derive"] }
+{%- endif %}
+color-eyre = { version = "0.6.2", features = ["capture-spantrace"] }
+tracing = "0.1.38"
+tracing-error = "0.2.0"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+
+[profile.dev.package.backtrace]
+opt-level = 3
