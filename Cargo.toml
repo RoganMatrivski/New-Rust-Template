@@ -11,7 +11,7 @@ edition = "2021"
 clap = { version = "^4.4", features = ["derive"] }
 {%- endif %}
 color-eyre = { version = "0.6.2", features = ["capture-spantrace"] }
-tracing = "0.1.38"
+tracing = "0.1.37"
 tracing-error = "0.2.0"
 tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
 
