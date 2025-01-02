@@ -1,7 +1,7 @@
 // we can see existing variables.
 // note that template and Rhai variables are separate!
 let crate_type = variable::get("crate_type");
-debug(`crate_type: ${crate_type}`);
+// debug(`crate_type: ${crate_type}`);
 
 let license = variable::get("license").to_upper();
 while (
