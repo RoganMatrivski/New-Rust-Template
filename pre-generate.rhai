@@ -6,6 +6,11 @@ let crate_type = variable::get("crate_type");
 let license = variable::get("license").to_upper();
 while (
     switch license {
+        "None" => {
+            file::delete("LICENSE-MIT");
+            file::delete("LICENSE-APACHE");
+            false // Output for while block
+        }
         "APACHE" => {
             file::delete("LICENSE-MIT");
             file::rename("LICENSE-APACHE", "LICENSE");
@@ -16,12 +21,15 @@ while (
             file::rename("LICENSE-MIT", "LICENSE");
             false  // Output for while block
         }
+        "Both" => { false  // Output for while block }
         _ => true,  // Output for while block
         }
 ) {
     license = variable::prompt("What license to use?", "MIT", [
+        "None",
         "APACHE",
         "MIT",
+        "Both",
     ]);
 };
 
