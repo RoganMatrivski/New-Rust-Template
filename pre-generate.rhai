@@ -21,7 +21,7 @@ while (
             file::rename("LICENSE-MIT", "LICENSE");
             false  // Output for while block
         }
-        "Both" => { false  // Output for while block }
+        "Both" => false,  // Output for while block
         _ => true,  // Output for while block
         }
 ) {
